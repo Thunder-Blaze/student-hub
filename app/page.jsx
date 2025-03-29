@@ -1,26 +1,18 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import Header from "@/components/header"
-import Footer from "@/components/footer"
 import HeroSection from "@/components/homepage/hero-section"
 import CtaSection from "@/components/homepage/cta-section"
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Header */}
-      <Header />
-
       <main className="flex-1">
         {/* Hero Section */}
         <HeroSection />
         {/* CTA Section */}
         <CtaSection />
       </main>
-
-      {/* Footer */}
-      <Footer />
     </div>
   )
 }
