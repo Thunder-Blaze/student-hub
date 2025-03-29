@@ -1,7 +1,12 @@
 "use client"
 import { useEffect, useState } from "react";
+<<<<<<< Updated upstream
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+=======
+import { TypeContributors } from "@/types/contributors";
+import ContributorCard from "@/components/contributors/contributor-card";
+>>>>>>> Stashed changes
 
 interface TypeRepoDetails {
   owner: string;
@@ -65,7 +70,11 @@ const Contributors = () => {
         <p className="text-red-500">{error}</p>
         <button 
           onClick={() => window.location.reload()} 
+<<<<<<< Updated upstream
           className="mt-4 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+=======
+          className="mt-4 px-4 py-2 bg-red-600 text-foreground rounded hover:bg-red-700"
+>>>>>>> Stashed changes
         >
           Try Again
         </button>
@@ -74,6 +83,7 @@ const Contributors = () => {
   );
 
   return (
+<<<<<<< Updated upstream
     <div className="flex min-h-screen w-screen flex-col bg-gradient-to-tr from-[#8900FF] to-[#00A8FF] items-center gap-4 p-4">
       <h1 className="text-3xl font-bold my-4 text-white">Our Contributors</h1>
       <div>
@@ -82,6 +92,16 @@ const Contributors = () => {
       <div className="flex justify-center items-center my-4">
         Sort By:
         <select className="ml-2 p-2 rounded-md bg-white text-black" onChange={(e) => setSortBy(e.target.value)} value={sortBy}>
+=======
+    <div className="flex w-screen flex-col bg-gradient-to-b from-background to-muted items-center gap-4 p-4 pt-8 pb-16">
+      <h1 className="text-3xl font-bold my-4 text-foreground">Our Contributors</h1>
+      <div>
+        <p className="text-lg text-foreground text-center">These are the amazing people who have contributed to this project.</p>
+      </div>
+      <div className="flex justify-center items-center my-4">
+        Sort By:
+        <select className="ml-2 p-2 rounded-md bg-background text-foreground" onChange={(e) => setSortBy(e.target.value)} value={sortBy}>
+>>>>>>> Stashed changes
           <option value="contributions">Contributions</option>
           <option value="name">Name</option>
         </select>
@@ -89,17 +109,27 @@ const Contributors = () => {
       <div className="flex flex-wrap gap-6 justify-center">
         {contributors.length === 0 && !isLoading && (
           <div className="flex flex-col items-center justify-center w-full py-12">
+<<<<<<< Updated upstream
             <p className="text-xl text-white text-center">No contributors found</p>
+=======
+            <p className="text-xl text-background text-center">No contributors found</p>
+>>>>>>> Stashed changes
           </div>
         )}
         {isLoading && (
           <div className="flex flex-col items-center justify-center w-full py-12">
+<<<<<<< Updated upstream
             <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-white"></div>
             <p className="mt-4 text-white">Loading contributors...</p>
+=======
+            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-foreground"></div>
+            <p className="mt-4 text-foreground">Loading contributors...</p>
+>>>>>>> Stashed changes
           </div>
         )}
         {contributors.length > 0 && (      
           contributors.map((contributor) => (
+<<<<<<< Updated upstream
             <div key={contributor.id}>
               <Card className="flex items-center container w-full sm:w-48 p-6 gap-4 scale-100 hover:scale-105 transition-transform duration-200 bg-white/50 ease-in-out shadow-md">
                 <div className="relative">
@@ -127,6 +157,9 @@ const Contributors = () => {
                 </CardContent>
               </Card>
             </div>
+=======
+            <ContributorCard key={contributor.id} contributor={contributor} />
+>>>>>>> Stashed changes
           ))
         )}
       </div>
